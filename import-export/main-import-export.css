@@ -1,0 +1,500 @@
+:root {
+  --green-color: rgba(104, 139, 104, 1);
+  --green-border: 1px solid rgba(104, 139, 104, 1);
+  --green-background: rgba(104, 139, 104, 1);
+  --azur-color: rgb(104, 214, 231);
+  --grey-color: #adadad;
+  --red-color: #9b0000;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../font/Roboto-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  height: 95vh;
+}
+
+main {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 88%;
+  margin: auto;
+  font-size: 15px;
+}
+.invisible {
+  display: none;
+}
+.visible {
+  display: block;
+}
+/* Bloc central sur la page avant selection d'un traitement*/
+.pre-import {
+  visibility: hidden;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------HEADER-----------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
+
+header {
+	background-color: #69a37c;
+	height: 5vh;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+header .logo-container {
+    width: 100px;
+    max-height: 100px;
+}
+  
+header .logo-container img {
+    width: 100%;
+    height: auto;
+}
+
+.logo-container {
+	display: flex;
+	align-items: center;
+}
+
+.main-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-menu li:not(:last-child) {
+	margin-right: 75px;
+}
+
+.main-menu li a, .user-menu li a {
+	text-decoration: none;
+	color: white;
+}
+
+.main-menu li a:hover, .user-menu li a:hover {
+	text-decoration: underline;
+}
+
+.user-menu li:not(:last-child) {
+	margin-right: 10px;
+}
+
+.user-menu {
+	display: flex;
+	align-items: center;
+}
+  
+.user-icon {
+	margin-right: 5px;
+}
+
+.user-menu .user-icon:hover {
+	background-color: #1a5546;
+    border-radius: 15px;
+}
+
+.main-menu li {
+	position: relative;
+}
+
+.fileMenu, #accessParam, #accessExp {
+	display: none;
+	position: absolute;
+	top: 105%; /* Place le sous-menu en dessous de son élément parent */
+	left: 0;
+	z-index: 100;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.616);
+	backdrop-filter: blur(10px);
+	opacity: 1;
+	min-width: 150px; 
+	white-space: nowrap;
+	padding: 0;
+}
+
+.fileMenu li,
+	#accessParam li,
+		#accessExp li {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.fileMenu li a, #accessParam li a, #accessExp li a {
+	display: block;
+	width: 100%;
+}
+
+.fileMenu li:not(:first-child),
+	#accessParam li:not(:first-child),
+		#accessExp li:not(:first-child) {
+	margin-top: 20px;
+}
+
+.menu-deroulant:hover .fileMenu,
+	.menu-deroulant:hover #accessParam,
+		.menu-deroulant:hover #accessExp {
+  	display: block;
+	padding: 20px;
+}
+
+.fileMenu li:not(:last-child), #accessParam li:not(:last-child), #accessExp li:not(:last-child) {
+	padding: 5px 0;
+}
+
+
+.fileMenu li a:hover, #accessParam li a:hover, #accessExp li a:hover {
+	text-decoration: none;
+	background-color: #69a37c;
+	padding: 0.3em;
+	border-radius: 8px;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------SOUS-BARRE-----------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
+
+/*DEBUT SOUS-BARRE 1*/
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1%;
+  background-color: rgba(136, 206, 172, 1);
+  width: 100%;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+}
+.bar img {
+  margin-left: 5%;
+}
+
+.bar p.fileBar{
+  margin-left: 0.5%;
+  text-decoration: none;
+  color: rgb(155, 0, 0);
+  font-size: 0.8rem;
+}
+
+.bar p {
+  margin-left: 36%;
+  font: 18px "Roboto", sans-serif;
+}
+/* FIN SOUS-BARRE 1 */
+
+/* DEBUT SOUS-BARRE 2 */
+.bar1 {
+  background-color: #f8f8f8;
+  width: 100%;
+  padding: 0 4%;
+  height: 1.8em;
+  margin: auto;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar1 li:hover span {
+  background-color: rgb(180, 180, 180);
+  width: 1%;
+  border-radius: 4px;
+}
+
+.bar1 li {
+  float: left;
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-size: 0.8em;
+}
+
+.bar1 a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.bar1 ul li:nth-child(2),
+.bar1 ul li:nth-child(3) {
+  font-weight: normal;
+}
+
+.bar1 ul li:first-child {
+  font-weight: bold;
+}
+/* FIN SOUS-BARRE 2 */
+
+
+/*----------------------------------------------------------------------------------------------------*/
+/*------------------------------------------DEUX BOUTONS POP UP---------------------------------------*/
+/*--------------------------------------------- ------------------------------------------------------*/
+.btn2, .btnAnnul {
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 15px;
+  background-color: #f8f8f8;
+  color: var(--red-color);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 2px 2px var(--red-color);
+  text-decoration: none;
+}
+.btn2:hover, .btnAnnul:hover {
+  outline-color: transparent;
+  outline-style: solid;
+  transition: 0.7s;
+  box-shadow: 0 0 0 4px rgb(161, 236, 230);
+}
+
+.link {
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-size: 15px;
+  background-color: #f8f8f8;
+  color: rgba(105, 163, 124, 1);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 2px 2px rgba(105, 163, 124, 1);
+  margin: 5% 0 0 29%;
+  text-decoration: none;
+  margin-right: 10%;
+}
+.link:hover {
+  outline-color: transparent;
+  outline-style: solid;
+  transition: 0.7s;
+  box-shadow: 0 0 0 4px rgb(161, 236, 230);
+}
+/* DEUX BUTTONS  POP-UP */
+
+/*----------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------BLOCKS GENERAUX----------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
+
+.container {
+  margin: auto;
+  margin-top: 0.5rem;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  background: none;
+  justify-content: center;
+  
+}
+.avs-img {
+  position: absolute;
+  top: 0.5em;
+  left: 3%;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+.checkmark {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--grey-color);
+  color: black;
+  margin-left: 1em;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 2px;
+  width: 8px;
+  height: 20px;
+  border: solid rgba(127, 216, 124, 1);
+  border-width: 0 2px 3px 0;
+  -webkit-transform: rotate(38deg);
+  -ms-transform: rotate(38deg);
+  transform: rotate(38deg);
+}
+/* table centrale page 1*/
+.table-top {
+  border-collapse: collapse;
+  margin-right: 1rem;
+}
+.table-top th,
+.table-bottom th {
+  color: white;
+  background-color: rgba(136, 206, 172, 1);
+  border-radius: 15px 15px 0 0;
+  font-weight: 400;
+  height: 40px;
+}
+
+.table-top tr {
+  height: 40px;
+  background-color: var(--white-color);
+}
+.table-top td {
+  padding-left: 0.5rem;
+}
+.table-top .table-top__header--currency-code,
+.table-bottom .table-bottom__header--currency-code {
+  width: 285px;
+}
+.table-top .table-top__header--currency-wording,
+.table-bottom .table-bottom__header--currency-wording {
+  width: 1315px;
+}
+
+.table-bottom .table-bottom__header--currency-code {
+  width: 285px;
+}
+
+.table-bottom .table-bottom__header--currency-wording {
+  width: 1315px;
+}
+/* Table Left */
+.table-left {
+  display: flex;
+  flex-direction: column;
+  width: 285px;
+  border-radius: 15px;
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.table-left-head {
+  color: white;
+}
+.table-left-head,
+.table-left p {
+  height: 40px;
+  line-height: 40px;
+}
+.table-left-head {
+  background-color: rgba(136, 206, 172, 1);
+  border-radius: 15px 15px 0 0;
+}
+.table-left p:hover {
+  background: rgba(136, 206, 172, 0.5);
+  cursor: pointer;
+}
+
+
+/* DIV centrale de : page 2 à Fin */
+.div-main {
+  width: 1315px;
+  height: 100%;
+  border-radius: 15px;
+}
+.div-head {
+  text-transform: uppercase;
+  margin: auto;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgba(136, 206, 172, 1);
+  color: white;
+  font-weight: 400;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+}
+.div-head p {
+  margin: auto;
+}
+.div-body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  height: calc(100% - 40px);
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Debut Footer */
+footer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #929292;
+  width: 100%;
+  height: 3vh;
+  bottom: 0; /* Ajout de la propriété bottom: 0 pour fixer le footer en bas */
+}
+
+footer .footer-menu {
+  display: flex;
+  
+}
+
+footer .footer-menu li {
+  margin-right: 1.5rem;
+}
+
+footer .footer-menu li a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+
+footer .footer-menu li a:hover {
+  text-decoration: underline;
+}
+
+footer i.logo-linkedin {
+  font-size: 0.9rem;
+}
+/* Fin Footer */
+
+/* PARTIE FLEXIBLE DEBUT POUR ECRAN MAX-WIDTH 1920*/
+@media only screen and (max-width: 1920px) {
+  
+  .eye {
+    margin: -1.5% 11.7%;
+  }
+  #block {
+    margin-top: 4%;
+  }
+  .modal {
+    top: 10%;
+    left: 30%;
+  }
+}
+/* PARTIE FLEXIBLE FIN POUR ECRAN MAX-WIDTH 1920*/
+
+/* PARTIE FLEXIBLE DEBUT POUR ECRAN MIN-WIDTH 1632*/
+
+@media only screen and (min-width: 1632px) {
+  
+  .eye {
+    margin: -1.2% 9.5%;
+  }
+  .modal {
+    top: 150px;
+    left: 34%;
+  }
+
+}

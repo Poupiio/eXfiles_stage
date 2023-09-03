@@ -1,0 +1,1020 @@
+/*-------------------------------------------------------------------------------------------*/
+/*-----------------------------------BLOCKS PRINCIPAUX---------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.containerDifferent {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.codeTraitementReduit {
+  width: 13%;
+  margin-left: 2rem;
+}
+
+.jcAugmente {
+  flex-grow: 1;
+  margin-right: 2rem;
+}
+
+.div-main .journal-comptable-home {
+  height: auto;
+  padding: 1.4em;
+}
+.container-home {
+  justify-content: space-around;
+  margin-left: 5%;
+}
+.container-home .table-left {
+  width: 285px;
+  margin-right: 10px;
+  display: block;
+}
+.container-home .main-journal-comptable-home {
+  width: 65%;
+}
+
+.journal-comptable h4 {
+  margin-left: 0;
+  height: 2%;
+}
+.journal-comptable-home h4 {
+  margin-left: 4%;
+}
+.main-journal-comptable-home {
+  margin-top: 8%;
+  height: auto;
+}
+.main-journal-comptable {
+  font-size: 0.7em;
+  height: 100%;
+  position: relative;
+  width: 75%;
+}
+.div-body.journal-comptable {
+  padding: 2em;
+}
+h5 {
+  margin-left: 1.5em;
+  padding-left: 1em;
+  text-align: left;
+  font-size: 1em;
+}
+.title-img h5{
+  margin-left: 0;
+}
+
+p.ecrituresSupprimees, p#groupeEcrituresText {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+
+
+.bar1 {
+  background-color: #f8f8f8;
+  width: 100%;
+  padding: 0 4%;
+  height: 1.8em;
+  margin: auto;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar1 li:hover span {
+  background-color: rgb(180, 180, 180);
+  width: 1%;
+  border-radius: 4px;
+}
+
+.bar1 li {
+  float: left;
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-size: 0.8em;
+}
+
+.bar1 a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.bar1 ul li:first-child,
+.bar1 ul li:nth-child(3) {
+  font-weight: normal;
+}
+
+.bar1 ul li:nth-child(2) {
+  font-weight: bold;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/*----------------------------------------LIGNE PIVOT----------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.ligne-div {
+  text-align: left;
+  width: 98%;
+  border-bottom: 2px solid var(--grey-color);
+  opacity: 0.8em;
+  margin-bottom: 1em;
+}
+/*-------------------------------------------------------------------------------------------*/
+/*-----------------------------------ECRITURE + LOGO "+"-------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.title-img {
+  display: flex;
+  font-size: 1.2em;
+  height: 1.4em;
+  position: relative;
+}
+.title-img img {
+  height: 1.2em;
+  width: auto;
+  margin-left: 1em;
+}
+
+.filtrerEcritures,
+.link-filtre-liste-ecriture {
+  position: absolute;
+  right: 4%;
+}
+
+.filtrerEcritures {
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 0.9em;
+  color: var(--azur-color);
+  font-weight: bold;
+  border: none;
+
+}
+.link-filtre-liste-ecriture a {
+  font-size: 0.9em;
+  color: var(--azur-color);
+  font-weight: bold;
+}
+
+
+.highlight {
+  outline-color: transparent;
+  outline-style: solid;
+  background-color: rgba(136, 206, 172, .5);
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------BLOCK 1 ----------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+/* Menu des lots de page home */
+
+/* Div englobante*/
+.journal-comptable .lots-dispos {
+  display: flex;
+  height: 15%;
+  align-items: center;
+}
+
+.lotContainer {
+  width: 100%;
+  height: auto;
+  padding: 0.5em;
+  text-align: left;
+  margin-top: 0.5em;
+  overflow: auto;
+}
+
+#lot-select li.options, li.nouveauLot {
+  list-style: none;
+  display: none;
+  cursor: pointer;
+  margin: 0;
+  background-color: rgba(212, 247, 231, 0.7);
+  font-size: inherit;
+  padding: 0.4em;
+}
+
+#lot-select li.options:not(:first-child):hover {
+  background-color: #fff;
+}
+
+
+
+/* BTNS RADIO*/
+.choix-ecritures {
+  width: 15%;
+}
+.choix-ecritures form {
+  padding-right: 0.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+  margin: auto;
+}
+.choix-ecritures form div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2em;
+}
+
+/*BOUTON APPLIQUER REGLES */
+.button {
+  width: 20%;
+}
+.appliquer-regles-link {
+  margin: 0;
+  padding: 0.8em;
+  line-height: 15%;
+  font-size: 1em;
+  line-height: 100%;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------TABLEAUX-----------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+/* POP UP DETAIL ECRITURE */
+.table-detail-ecriture {
+  border-collapse: collapse;
+  border: 1px solid var(--grey-color);
+  padding: 0.3em 0 0.3em 0;
+  height: 1em;
+  font-weight: 100;
+}
+
+.table-detail-ecriture tr {
+  height: 2em;
+}
+
+
+/*LIGNE SOURCE*/
+.ligne-source-container {
+  max-height: 15%;
+  margin-bottom: 2em;
+  width: 100%;
+}
+
+.ligneSource, .tableau-ecriture {
+  border-collapse: collapse;
+  border: 1px solid var(--grey-color);
+  white-space: nowrap;
+  width: 100%;
+}
+
+.ligneSource th, .tableau-ecriture th {
+  padding: 0.3em;
+  height: 1em;
+  font-weight: 100;
+  background-color: white;
+  border: solid 1px var(--grey-color);
+}
+
+.ligneSource td, .tableau-ecriture td {
+  width: 15em;
+  margin-top: 0.5em;
+  border: solid 1px var(--grey-color);
+  height: 1.5em;
+}
+
+#iconeTh, #iconeTd {
+  display: none;
+}
+
+#icone {
+  cursor: pointer;
+}
+
+
+/* Tableau ECRITURE */
+
+.tableau-ecriture-container {
+  max-height: 53%;
+  overflow: scroll;
+  height: auto;
+}
+
+.tableau-ecriture th {
+  position: sticky;
+  top: 0;
+  border: solid 1px var(--grey-color);
+}
+
+.tableau-ecriture th:first-child {
+  min-width: 50px;
+}
+
+.tableau-ecriture td:nth-child(4),
+.tableau-ecriture th:nth-child(16) {
+  min-width: 86px;
+}
+
+.tableau-ecriture td:nth-child(2),
+.tableau-ecriture td:nth-child(5),
+.tableau-ecriture td:nth-child(9),
+.tableau-ecriture td:nth-child(10),
+.tableau-ecriture th:nth-child(15){
+  min-width: 41px;
+}
+
+.tableau-ecriture td:nth-child(3) {
+  min-width: 55px;
+}
+
+/* background-color 1 ligne sur 2 */
+.tableau-ecriture tbody tr:nth-child(even),
+.table-detail-ecriture tbody tr:nth-child(even) {
+  background-color: rgba(216, 211, 211, 0.7);
+}
+
+.modifierEcriture, .supprimerLigne, .modifierLigne {
+  cursor: pointer;
+}
+
+.modifierEcriture:hover, .supprimerLigne:hover, .modifierLigne:hover {
+  font-size: 1rem;
+}
+
+.modifierEcriture {
+  color: green;
+  margin-right: 1rem;
+}
+
+.fa-trash {
+  color: red;
+  cursor: pointer;
+}
+
+
+/* Flèches dans les th */
+.fa-caret-left {
+  padding-left: 0.3em;
+  color: var(--grey-color);
+  cursor: pointer;
+}
+
+/* Survol des lignes */
+.tableau-ecriture tbody tr.passage:hover {
+  cursor: pointer;
+  background: rgba(212, 247, 231, 0.7);
+}
+
+.draggable {
+  cursor: move;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------APRES TABLE---------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+.table-after {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.table-after .poubelleToutSuppr {
+  width: 15%;
+  margin-left: 2rem;
+  font-weight: bold;
+}
+
+.table-after div:nth-child(2) {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  align-items: center;
+}
+
+
+.total {
+  width: 30%;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.div-debit, .div-credit {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#span-debit, #span-credit {
+  color: var(--green-color);
+}
+
+#poubelleToutSuppr {
+  margin-left: 0.5em;
+  font-size: 0.8rem;
+}
+
+
+/* BOUTONS POPUP ATTENTION TOUT SUPPRIMER */
+#validerToutSupprimer, #validerSupprimerLigne {
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5vw 1vw;
+  text-align: center;
+  font-size: 15px;
+  background-color: #f8f8f8;
+  color: rgba(105, 163, 124, 1);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 2px 2px rgba(105, 163, 124, 1);
+  margin: auto;
+  margin-top: 1em;
+  text-decoration: none;
+}
+
+#annulerToutSupprimer, #annulerSupprimerLigne {
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5vw 1vw;
+  text-align: center;
+  font-size: 15px;
+  background-color: #f8f8f8;
+  color: var(--red-color);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 2px 2px var(--red-color);
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+
+
+/* .input-generer-edition { */
+  /* position: relative;
+
+  height: 2em;
+  width: 25%; */
+
+  /* border: solid 2px blue;
+} */
+
+.generer-edition a#editer {
+  color: var(--azur-color);
+  font-size: 1.1em;
+  font-weight: bold;
+}
+/* .input-generer-edition input {
+  z-index: 200;
+  cursor: pointer;
+  opacity: 0;
+}
+.input-generer-edition span {
+  position: absolute;
+  font-size: 1.1em;
+  left: -1em;
+  top: 0;
+  width: 110%;
+  text-align: left;
+  line-height: 2em;
+  color: var(--azur-color);
+  font-weight: bold;
+  z-index: -100;
+} */
+
+/*-------------------------------------------------------------------------------*/
+/*------------------------------Pop Up Filtres-----------------------------------*/
+/*-------------------------------------------------------------------------------*/
+.visible-flex {
+  display: flex;
+}
+.invisible {
+  display: none;
+}
+.popup-filtre {
+  border: 1px solid var(--grey-color);
+  position: relative;
+  top: -40vh;
+  z-index: 100;
+  height: 10vh;
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.popup-filtre-form {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.popup-filtre-form div {
+  text-align: left;
+  min-width: 30%;
+
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popup-filtre-form div input {
+  margin-right: 30%;
+}
+
+.popup-filtre-form div input[name="filtres"] {
+  cursor: pointer;
+}
+
+.appliquerFiltres {
+  color: var(--azur-color);
+  font-weight: bold;
+  align-self: center;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: inherit;
+}
+.search-and-input {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  align-self: center;
+}
+.input-search {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  position: relative;
+}
+.input-search input {
+  border: 1px solid black;
+  border-radius: 5em;
+  padding: 0 0.5em;
+  width: 100%;
+}
+
+.main-and-popup {
+  display: flex;
+  justify-content: center;
+}
+.popupToutSupprimer, .popupSupprimerLigne, .confirmationModif {
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  font-weight: bold;
+  width: 30em;
+  height: 20em;
+  border-radius: 15px;
+  margin: auto;
+  border: 1px solid rgb(231, 231, 231);
+  z-index: 500;
+  position: relative;
+  top: -40vh;
+}
+.fa-search span:nth-child(2) {
+  position: relative;
+}
+.input-search .fa-search {
+  position: absolute;
+  left: 1em;
+  top: 1.5em;
+  cursor: pointer;
+}
+/*-----------------------------------------------------------------------------*/
+/*----------------------------FORMULAIRE POPUP---------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+.container-formulaire-jc {
+  font-size: 0.9em;
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  margin: auto;
+}
+.main-form-div {
+  border-radius: 10px;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  margin-top: 9vh;
+  background-color: white;
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+}
+.form-j-c {
+  font-size: 0.8em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1.5em;
+  position: relative;
+}
+
+/* 10% */
+.form-j-c .libelle {
+  display: flex;
+  align-items: center;
+  height: 10%;
+}
+.form-j-c .libelle h4 {
+  width: 15%;
+}
+
+.form-j-c .libelle input {
+  width: 60%;
+}
+.form-j-c .libelle .check-div {
+  width: 20%;
+  display: flex;
+}
+.libelle .check-div div {
+  width: 50%;
+  margin-left: 0.5em;
+}
+.form-j-c .valeurs,
+.form-j-c .zones {
+  margin: auto;
+  font-size: 1em;
+  width: 95%;
+  border-bottom: 2px solid grey;
+  text-align: left;
+  margin-top: 1em;
+}
+.form-zones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-valeurs,
+.block-divers,
+.block-zones-annexe {
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 0.5em;
+}
+
+.form-valeurs div,
+.block-divers div,
+.block-zones-annexe div {
+  margin-top: 0.5em;
+  width: 32%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 2em;
+}
+.form-valeurs div select,
+.form-valeurs div input,
+.block-divers div input,
+.block-zones-annexe div input {
+  width: 60%;
+  margin-left: 0.5em;
+  font-size: 0.8em;
+  height: 2em;
+}
+.container-formulaire-jc {
+  position: absolute;
+  margin: auto;
+  top: 10vh;
+  left: 20vw;
+}
+.link-valid-annul {
+  margin: 1em 2em;
+}
+.btn-popup-zones {
+  width: 100%;
+  margin: auto;
+}
+
+/*-------------------------------------------------------------------------------*/
+/*----------------------------PopupDétailsEcritures------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/* passe en visible-flex JS */
+.main-popup-details-ecriture {
+  font-size: 0.9em;
+  width: 80vw;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.box-detail-ecriture {
+  position: relative;
+  border: 1px solid var(--grey-color);
+  border-radius: 10px;
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+  width: 75%;
+  height: 65%;
+  padding: 1em;
+  background-color: white;
+  overflow: hidden;
+}
+.table-detail-ecriture-container {
+  height: 65%;
+  width: 95%;
+  margin: auto;
+  overflow: scroll;
+  border-bottom: 1px solid var(--grey-color);
+}
+.table-detail-ecriture {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+}
+.table-detail-ecriture th {
+  border-bottom: 1px solid var(--grey-color);
+  text-align: center;
+  position: sticky;
+  height: 2em;
+  top: 0;
+  background-color: white;
+  width: 50%;
+  padding: 0.5em;
+}
+.table-detail-ecriture tbody td:first-child {
+  border-right: 1.5px solid var(--grey-color);
+}
+.table-detail-ecriture tr {
+  height: 2em;
+  padding: 0.1em;
+}
+.table-detail-ecriture td {
+  border-left: 0.2px solid var(--grey-color);
+}
+
+.box-detail-ecriture p#eXfiles {
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.close-button {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+  font-size: 16px;
+  color: var(--grey-color);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.close-button i {
+  font-size: 1.2rem;
+}
+
+.title-detail-ecriture {
+  margin: 0.8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Positionnement des boutons Précédent / Suivant */
+.title-detail-ecriture .buttonsDE {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title-detail-ecriture i {
+  font-size: 1rem;
+}
+
+.title-detail-ecriture i.next {
+  padding-left: 0.5rem;
+}
+
+.title-detail-ecriture i.previous {
+  padding-right: 0.5rem;
+}
+
+.title-detail-ecriture button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.2rem 1rem;
+  margin: 0 1rem;
+}
+
+.title-detail-ecriture .buttonsDE {
+  visibility: hidden;
+}
+
+
+.title-detail-ecriture h3 {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.title-detail-ecriture h4.indicLigne {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+
+.title-detail-ecriture p.indicLigne {
+  font-size: 0.8rem;
+  padding-top: 0.4rem;
+}
+
+
+/* Bouton "Editer */
+::-webkit-file-upload-button {
+  cursor:pointer;
+}
+
+
+
+/*-------------------------------------------------------------------------------*/
+/*--------------------------- POP UP EDITER LIGNE -------------------------------*/
+/*-------------------------------------------------------------------------------*/
+
+section#popUpEdit {
+width: 70vw;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+
+.editionContainer {
+border: 1px solid var(--grey-color);
+border-radius: 10px;
+box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+width: 100%;
+height: 100%;
+padding: 1rem 2rem;
+background-color: #f8f8f8;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.editionContainer h3 {
+align-self: flex-start;
+margin-bottom: 1.5rem;
+}
+
+.blocValeurs label {
+display: inline-block;
+width: 22%;
+}
+
+.blocZA label {
+display: inline-block;
+width: 30%;
+}
+
+.firstRow {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+}
+
+.firstRow label[for="inputLibelle"], .blocValeurs h4, .blocZA h4 {
+text-transform: uppercase;
+text-align: left;
+font-size: 0.9em;
+font-weight: 600;
+}
+
+.firstRow input#inputLibelle {
+margin-left: 0;
+width: 70%;
+}
+
+.blocValeurs h4, .blocZA h4 {
+margin: 1.5rem 0;
+}
+
+.blocValeurs h4::after, .blocZA h4::after {
+content: "";
+display: block;
+height: 0.5px;
+background-color: var(--grey-color);
+margin-bottom: 1rem;
+}
+
+.blocValeurs label, .blocZA label {
+margin-right: 0.5rem;
+}
+
+.blocZA {
+margin-bottom: 2rem;
+}
+
+.blocValeurs, .blocZA {
+width: 100%;
+}
+
+.form-group1, .form-group2, .form-group3, .form-group4, .form-group5, .form-group6, .form-group7 {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1rem;
+}
+
+/* Les 3 div les + grandes de la div .blocValeurs */
+.compte, .libEdit, .libExfiles {
+width: 65%;
+}
+
+/* Les 3 div les + petites de la div .blocValeurs */
+.montantEdit, .codeJournal, .refEdit {
+width: 35%;
+}
+
+/* inputs + select des 3 div les + grandes de la div .blocValeurs */
+input#compteSelection, .libEdit input, .libExfiles input {
+width: 70%;
+}
+
+/* inputs + select des 3 div les + petites de la div .blocValeurs */
+.montantEdit input, input#codeJournalEdit, .refEdit input {
+width: 40%;
+}
+
+
+.za1, .za2, .za3, .za4, .za5, .za6, .za7, .za8, .za9, .za10 {
+width: 35%;
+}
+
+.za10.align-left {
+margin-left: -0.6rem;
+}
+
+
+/* 
+.blocValeurs .form-group1, .blocValeurs .form-group2,
+.blocZA .form-group3, .blocZA .form-group4, .blocZA .form-group5, .blocZA form-group6 {
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 98%;
+margin: 1rem 0;
+} 
+
+
+.compte, .montantEdit, .libEdit, .codeJournal, .libExfiles, .refEdit,
+.sectionBudget, .collectif, .refTiers, .za4, .za5, .za6, .za7, .za8, .za9, .za10 {
+width: 30%;
+}
+
+.formGroup1 label, .form-group2 label, .form-group3 label, .form-group4 label, .form-group5 label, .form-group6 label {
+margin-right: 0.5rem;
+}
+
+.compte #compteSelection, .codeJournal #codeJournal {
+width: 50%;
+} */
+
+/* Boutons Valider & Annuler */
+#boutonsConfirmation button#validerModification,
+#boutonsConfirmation button#annulerModification {
+text-transform: uppercase;
+padding: 0.5rem 1.5rem;
+outline: none;
+background-color: #f8f8f8;
+border-radius: 30px;
+font-size: 1rem;
+transition: 0.7s;
+border: none;
+cursor: pointer;
+}
+
+#boutonsConfirmation button:hover {
+outline-color: transparent;
+outline-style: solid;
+transition: 0.7s;
+box-shadow: 0 0 0 4px rgb(161, 236, 230);
+}
+
+#validerModification {
+color: rgba(105, 163, 124, 1);
+box-shadow: 0px 0px 2px 2px rgba(105, 163, 124, 1);
+margin-right: 2rem;
+}
+
+#annulerModification {
+color: var(--red-color);
+box-shadow: 0px 0px 2px 2px var(--red-color);
+}

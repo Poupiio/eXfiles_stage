@@ -1,0 +1,50 @@
+/*---------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------BLOCK GAUCHE-------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
+.table-left {
+  margin-right: 1em;
+  margin-bottom: 1em;
+  height: 100%;
+}
+.table-left tr {
+  max-height: 1em;
+}
+.table-left-body tr:hover {
+  width: 100%;
+  cursor: pointer;
+  padding-left: 40%;
+  padding-right: 40%;
+  background: rgba(136, 206, 172, 0.5);
+}
+
+.table-left-body {
+  text-align: center;
+  width: 100%;
+  background-color: var(--white-color);
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------BLOCK Central------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------*/
+.main-div-table-double {
+  align-self: center;
+  width: 80%;
+
+}
+.table-center-body {
+  width: 80%;
+  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-bottom: 10%;
+
+}
+.table-center-body tr {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1.5em 0;
+}
+.div-center {
+  height: 80%;
+  border: 3px solid red;
+}
