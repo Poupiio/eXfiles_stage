@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Visualisation journal-Page 1</title>
+	<!-- Heritage config CSS admin-->
+	<link rel="stylesheet" href="../css/journal-comptable/journal-comptable-1.css">
+	<link rel="stylesheet" href="../css/dossier-popup.css">
+</head>
+
+<body>
+
+	<header>
+		<div class="logo-container">
+			<img class="logo"src="../images/logo.png" alt="Logo eXfiles">
+		</div>
+		<nav>
+			<ul class="main-menu">
+				<li><a href="../tableau-de-bord.html">Tableau de bord</a></li>
+				<li class="menu-deroulant">
+					<a href="#">Dossier</a>
+					<ul class="fileMenu">
+						<li><a id="myBtn" href="#">Gérer les dossiers</a></li>
+					</ul>
+				</li>
+				<li class="menu-deroulant">
+					<a href="#">Paramétrage</a>
+					<ul id="accessParam"></ul>
+				</li>
+				<li class="menu-deroulant">
+					<a href="#">Exploitation</a>
+					<ul id="accessExp"></ul>
+				</li>
+			</ul>
+		</nav>
+		<ul class="user-menu">
+			<li><a href="../user.html"><i class="fa-regular fa-user user-icon"></i></a></li>
+			<li><a href="../deconnexion.html">Déconnexion</a></li>
+		</ul>
+	</header>
+
+	
+
+    <!-- DEBUT FENETRE POP-UP GERER LES DOSSIERS -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <h3>GÉRER LES DOSSIERS</h3>
+        <p for="" class="l1">Créer un dossier</p>
+        <p class="nd">
+          Nom du dossier
+          <input placeholder="nom-du-dossier" class="snd" />
+        </p>
+
+        <p for="" class="l2">Renommer/Supprimer un dossier</p>
+
+        <ul class="fonc"></ul>
+          
+
+          <!-- DEBUT DEUX BUTTONS  POP-UP -->
+          <a class="link" href="#"
+            >VALIDER</a
+          >
+          <a class="btn2" href="#"
+            >ANNULER</a
+          >
+          <!-- FIN DEUX BUTTONS  POP-UP -->
+      </div>
+    </div>
+
+
+    <main class="main-journal">
+    <!-- DEBUT DEBUT SOUS-BARRE -->   
+	<div class="bar">
+		<i class="fa-regular fa-folder-open icone-folder"></i>
+		<p class="pageTitle">EXPLOITATION</p>
+	</div>
+	  <div class="bar1">
+		<ul id="subMenu">
+		</ul>
+	  </div>
+
+		<!--BLOCK LEFT TRAITEMENT-->
+        <section class="container containerDifferent">
+			<div id ="codeTraitement" class="table-left traitement codeTraitementReduit">
+				<div class="table-left-head">TRAITEMENT</div>
+			</div>
+
+			<!--DEBUT BLOCK CENTRAL-->
+			<section class="div-main main-journal-comptable jcAugmente">
+
+            <!--HEAD-->
+            
+            <!--Début Contenu Central-->
+            <div class="div-body journal-comptable">
+				<div class="div-head import-source">
+					<p>VISUALISATION DU JOURNAL COMPTABLE</p>
+				</div>
+
+				<!-- LOTS DISPONIBLES -->
+              	<div class="lots-dispos">
+					<!-- Liste déroulante des lots -->
+                  <div class="lotContainer">
+                    <ul id="lot-select"></ul>
+                  </div>
+					<div class="choix-ecritures">
+						<form>
+							<div class="toutes-ecritures">
+								<label for="toutes">Toutes les écritures</label>
+								<input type="radio" id="toutes" value="toutes" name="type-ecriture" />
+							</div>
+							<div class="toutes-ecritures">
+								<label for="cax">Les écritures C A X</label>
+								<input type="radio" id="cax" value="cax" name="type-ecriture" checked />
+							</div>
+						</form>
+					</div>
+					<div class="button">
+						<a class="appliquer-regles" href="#">Appliquer les règles</a>
+					</div>
+				</div>
+
+				<div class="ligne-titre">
+					<div class="ligne-div">
+						<h4 id="pivot-comptable">PIVOT COMPTABLE</h4>
+					</div>
+				</div>
+
+				<!-- LIGNE SOURCE -->
+				<div class="ligne-source-container">
+					<h5 id="title-source">Ligne Source</h5>
+					<table class="ligneSource">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Société</th>
+								<th>Banque</th>
+								<th>RIB</th>
+								<th>Code Compte</th>
+								<th>Flux</th>
+								<th>Budget</th>
+								<th>Date Valeur</th>
+								<th>Date Opération</th>
+								<th>Libellé</th>
+								<th>Référence</th>
+								<th>Montant</th>
+								<!-- Ajout d'un th vide pour l'icone -->
+								<th id="iconeTh"></th>
+							</tr>
+						</thead>
+						<tbody id="ligneSource">
+							<tr>
+								<td id="id"></td>
+								<td id="societe"></td>
+								<td id="banque"></td>
+								<td id="rib"></td>
+								<td id="codeCompte"></td>
+								<td id="flux"></td>
+								<td id="codeBudget"></td>
+								<td id="dateValeur"></td>
+								<td id="dateOperation"></td>
+								<td id="libelle"></td>
+								<td id="reference"></td>
+								<td id="montant"></td>
+								<td id="iconeTd">
+								<i class="fa-solid fa-eye" id="icone"></i>
+								</td>   
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!--Ecriture+Icon + lien filtre écriture ou résultat des filtres appliqués-->
+				<div class="title-img">
+					<a href="#">
+            			<img class="retourModif invisible" src="../images/retour.png" alt="" />
+          			</a>
+					<h5 id="title-ecriture">Ecriture</h5>
+					<a href="#">
+						<img class="ecriture" src="../images/add.png" alt="" />
+					</a>
+					<button class="filtrerEcritures">Filtrer les écritures</button>
+					<div class="link-filtre-liste-ecriture invisible">
+						<span id="filtresEcritureSelectionnes"></span>
+					</div>
+				</div>
+              
+              <div class="tableau-ecriture-container">
+                <table class="tableau-ecriture">
+                  <thead id="thead-ecriture">
+                    <tr>
+                      <th scope="col" class="nonFiltrable" id="th-vide"></th>
+                      <th scope="col" draggable="true" class="nonFiltrable draggable" id="col-ligne-source">N°L.<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="nonFiltrable draggable" id="col-num-lot">N°Lot<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-regle">Règle Appliquée<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-flux">Flux<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-compte">Code Compte<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-date-ecriture">Date Ecriture<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" class="nonFiltrable draggable" draggable="true" id="col-date-op">Date Opération<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" class="nonFiltrable draggable" draggable="true" id="col-statut">Statut<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" class="nonFiltrable draggable" draggable="true" id="col-num-ligne">N°Ligne<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-lib-ligne">Libellé Ligne<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-compte-d">Compte Débité<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-compte-c">Compte Crédité<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-montant">Montant<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" class="nonFiltrable draggable" draggable="true" id="col-sens">Sens<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-lib">Libellé<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-journal">Code Journal<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-lib-ex">Libellé ExFiles<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-ref">Référence<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za1">Zone Annexe 1<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za2">Zone Annexe 2<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za3">Zone Annexe 3<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za4">Zone Annexe 4<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za5">Zone Annexe 5<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za6">Zone Annexe 6<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za7">Zone Annexe 7<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za8">Zone Annexe 8<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za9">Zone Annexe 9<i class="fas fa-caret-left"></i></th>
+                      <th scope="col" draggable="true" class="draggable" id="col-za10">Zone Annexe 10<i class="fas fa-caret-left"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody-ecriture"></tbody>
+                </table>
+              </div>
+
+              <!--BLOCK DE FIN-->
+              <div class="table-after">
+                <div class="toutSuppr">
+                  <span class="poubelleToutSuppr">Tout supprimer
+                    <i class="fa-solid fa-trash toutSupprimer invisible" id ="poubelleToutSuppr"></i>
+                  </span>  
+                </div>
+                <div>
+                  <div class="generer-edition">
+                    <a href="" id="editer" download>Editer</a>
+                  </div>
+                
+                  <span class="total">Montant total</span>
+
+                  <div class="div-debit">
+                    <span id="span-debit">Débit</span>
+                    <span id="debit-total"></span>
+                  </div>
+                  <div class="div-credit">
+                    <span id="span-credit">Crédit</span>
+                    <span id="credit-total"></span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!--FIN Contenu Central-->
+          
+            <!--------------------------------------POPUPS-------------------------------------------->
+            <!--POPUP FILTRES A APLLIQUER -->
+            <div class="popup-filtre invisible">
+              <form action="" class="popup-filtre-form">
+                <div>
+                  <label for="tous">T - Tous</label>
+                  <input type="checkbox" id="tous" name="filtres" value="T" />
+                </div>
+
+                <div>
+                  <label for="acompleter">C - à Compléter</label>
+                  <input type="checkbox" id="acompleter" name="filtres" value="C" />
+                </div>
+
+                <div>
+                  <label for="xinconnu">X - X-Inconnu</label>
+                  <input type="checkbox" id="xinconnu" name="filtres" value="X" />
+                </div>
+                <div>
+                  <label for="anomalie">A - Anomalie</label>
+                  <input type="checkbox" id="anomalie" name="filtres" value="A" />
+                </div>
+                <div>
+					<label for="valide">V - Validé</label>
+					<input type="checkbox" id="valide" name="filtres" value="V" />
+                </div>
+                <div>
+                  <label for="noncompta">VNC - Statut validé non comptabilisé</label>
+                  <input type="checkbox" id="noncompta" name="filtres" value="VNC" />
+                </div>
+              </form>
+              <div class="search-and-input">
+                <button class="appliquerFiltres">Appliquer les filtres</button>
+                <div class="input-search">
+                  <span>
+                    <i class="fas fa-search iconeRecherche"></i>
+                    Chercher dans les écritures
+                  </span>
+                  <input type="text" id="chercherEcriture" />
+                </div>
+              </div>
+            </div>
+            <!--FIN POPUP FILTRES A APPLIQUER-->
+
+            <!-- POPUPS ATTENTION -->
+            <!-- 1. Attention "Tout supprimer" -->
+            <div class="div-popup popupToutSupprimer invisible">
+              <i
+                class="fas fa-light fa-triangle-exclamation"
+                style="font-size: 48px; color: red"
+              ></i>
+              <p>
+                ATTENTION : <br />
+                Etes vous sûr de vouloir supprimer le(s) lot(s) sélectionné(s)?
+              </p>
+
+              <div class="icons-popup">
+                <button id="validerToutSupprimer" href="JC.html">OK</button>
+                <button id="annulerToutSupprimer" href="JC.html">ANNULER</button>
+              </div>
+            </div>
+
+            <!-- 2. Attention "Supprimer ligne" -->
+            <div class="div-popup popupSupprimerLigne invisible">
+              <i class="fas fa-light fa-triangle-exclamation" style="font-size: 48px; color: red"></i>
+              <p>
+                ATTENTION : <br />
+                Etes vous sûr de vouloir supprimer le(s) lot(s) sélectionné(s)?
+              </p>
+
+              <div class="icons-popup">
+                <button id="validerSupprimerLigne" href="JC.html">OK</button>
+                <button id="annulerSupprimerLigne" href="JC.html">ANNULER</button>
+              </div>
+            </div>
+            <!--FIN POPUP ATTENTION-->
+
+            <!-- POPUP CONFIRMATION MODIFICATION LIGNE -->
+            <div class="div-popup confirmationModif invisible">
+              <i class="fas fa-light fa-triangle-exclamation" style="font-size: 48px; color: red" ></i>
+              <p>L'écriture n'est pas équilibrée ! Voulez-vous continuer ?"</p>
+              <div class="icons-popup">
+                <button
+                  class="btn-bottom-center-visible validerModif"
+                  id="validationModif">
+                  OK
+                </button>
+                <button
+                  class="btn-right-middle-visible annulerModif"
+                  id="annulationModif">
+                  ANNULER
+                </button>
+              </div>
+            </div>
+
+
+            <!--POPUP DETAILS ECRITURE-->
+            <section class="main-popup-details-ecriture invisible">
+				<div class="box-detail-ecriture">
+					<p id="eXfiles">eXfiles</p>
+					<button class="close-button">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+					
+					<div class="title-detail-ecriture">
+						<div class="buttonsDE">
+							<div class="previousBtn">
+								<button class="previous" disabled>
+								<i class="fa-solid fa-arrow-left previous"></i>
+								Précédent
+								</button>
+							</div>
+							<div class="nextBtn">
+								<button class="next">
+								Suivant
+								<i class="fa-solid fa-arrow-right next"></i>
+								</button>
+							</div>
+						</div>
+						<h3 id="detailEcritureTitre">Détail écriture</h3>
+					</div>
+        
+                <div class="table-detail-ecriture-container">
+                  <table class="table-detail-ecriture">
+                    <thead>
+                      <tr>
+                        <th>Colonne</th>
+                        <th>Valeur</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>User</td>
+                        <td id="user"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro d'import</td>
+                        <td id="numImport"></td>
+                      </tr>
+                      <tr>
+                        <td>Date d'import</td>
+                        <td id="dateImport"></td>
+                      </tr>
+                      <tr>
+                        <td>Nom du fichier source</td>
+                        <td id="nomFichierSource"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro de ligne</td>
+                        <td id="numeroLigne"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Enregistrement</td>
+                        <td id="codeEnregistrement"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Banque</td>
+                        <td id="codeBanque"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone réservée 1</td>
+                        <td  id="ZR1"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Guichet</td>
+                        <td id="codeGuichet"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Devise du compte</td>
+                        <td id="codeDeviseCompte"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Devise du mouvement</td>
+                        <td id="codeDeviseMvt"></td>
+                      </tr>
+                      <tr>
+                        <td>Nombre de décimales Solde</td>
+                        <td id="nbDecimSolde"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone réservée 2</td>
+                        <td id="ZR2"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone réservée 3</td>
+                        <td id="ZR3"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone reservée 4</td>
+                        <td id="ZR4"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone reservée 5</td>
+                        <td id="ZR5"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro de compte</td>
+                        <td id="numCompte"></td>
+                      </tr>
+                      <tr>
+                        <td>Date du solde initial</td>
+                        <td id="dateSoldeInit"></td>
+                      </tr>
+                      <tr>
+                        <td>Montant du solde initial</td>
+                        <td id="montantSoldeInit"></td>
+                      </tr>
+                      <tr>
+                        <td>Code opération interne</td>
+                        <td id="codeOperationInterne"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Guichet compte ouvert</td>
+                        <td id="codeGuichetCompteOuvert"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Opération Interbancaire (CIB)</td>
+                        <td id="codeOpeInterban"></td>
+                      </tr>
+                      <tr>
+                        <td>Date Compta Opération</td>
+                        <td id="dateComptaOperat"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Motif Rejet</td>
+                        <td id="codeMotifRejet"></td>
+                      </tr>
+                      <tr>
+                        <td>Date Valeur</td>
+                        <td id="dateValeurDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Libellé</td>
+                        <td id="libelleDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro d'écriture</td>
+                        <td id="numeroEcriture"></td>
+                      </tr>
+                      <tr>
+                        <td>Indice Exonération Mouvement</td>
+                        <td id="indiceExonerationMVT"></td>
+                      </tr>
+                      <tr>
+                        <td>Indice Indisponibilité</td>
+                        <td id="indiceIndisponibilite"></td>
+                      </tr>
+                      <tr>
+                        <td>Montant du mouvement</td>
+                        <td id="montantMVT"></td>
+                      </tr>
+                      <tr>
+                        <td>Nombre de décimales du montant du mouvement</td>
+                        <td id="nbDecimMontantMVT"></td>
+                      </tr>
+                      <tr>
+                        <td>Qualifiant Zone IC</td>
+                        <td id="qualifiantZoneIC"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires</td>
+                        <td id="infosCompl"></td>
+                      </tr>
+                      <tr>
+                        <td>Date du solde final</td>
+                        <td id="dateSoldeFinal"></td>
+                      </tr>
+                      <tr>
+                        <td>Montant du solde final</td>
+                        <td id="montantSolideFinal"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Flux</td>
+                        <td id="codeFlux"></td>
+                      </tr>
+                      <tr>
+                        <td>Référence</td>
+                        <td id="refDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Budget</td>
+                        <td id="codeBudgetDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Nombre</td>
+                        <td id="nombre"></td>
+                      </tr>
+                      <tr>
+                        <td>Frais</td>
+                        <td id="frais"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro du journal tréso</td>
+                        <td id="numeroJournalTreso"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro du site</td>
+                        <td id="numeroSite"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro de log</td>
+                        <td id="numeroLog"></td>
+                      </tr>
+                      <tr>
+                        <td>Date de fin</td>
+                        <td id="dateFin"></td>
+                      </tr>
+                      <tr>
+                        <td>Montant Contre Valeur</td>
+                        <td id="montantCVal"></td>
+                      </tr>
+                      <tr>
+                        <td>Sens</td>
+                        <td id="sensDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Supression</td>
+                        <td id="suppression"></td>
+                      </tr>
+                      <tr>
+                        <td>Numéro d'écriture ERP</td>
+                        <td id="numEcritERP"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 1</td>
+                        <td id="IC1"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 2</td>
+                        <td id="IC2"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 3</td>
+                        <td id="IC3"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 4</td>
+                        <td id="IC4"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 5</td>
+                        <td id="IC5"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 6</td>
+                        <td id="IC6"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 7</td>
+                        <td id="IC7"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 8</td>
+                        <td id="IC8"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 9</td>
+                        <td id="IC9"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 10</td>
+                        <td id="IC10"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 11</td>
+                        <td id="IC11"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 12</td>
+                        <td id="IC12"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 13</td>
+                        <td id="IC13"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 14</td>
+                        <td id="IC14"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 15</td>
+                        <td id="IC15"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 16</td>
+                        <td id="IC16"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 17</td>
+                        <td id="IC17"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 18</td>
+                        <td id="IC18"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 19</td>
+                        <td id="IC19"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 20</td>
+                        <td id="IC20"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 21</td>
+                        <td id="IC21"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 22</td>
+                        <td id="IC22"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 23</td>
+                        <td id="IC23"></td>
+                      </tr>
+                      <tr>
+                        <td>Infos Complémentaires 24</td>
+                        <td id="IC24"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone Utilisateur 1</td>
+                        <td id="ZU1"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone Utilisateur 2</td>
+                        <td id="ZU2"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone Utilisateur 3</td>
+                        <td id="ZU3"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone Utilisateur 4</td>
+                        <td id="ZU4"></td>
+                      </tr>
+                      <tr>
+                        <td>Zone Utilisateur 5</td>
+                        <td id="ZU5"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Dossier</td>
+                        <td id="codeDossier"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Traitement</td>
+                        <td id="codeTraitementDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Société</td>
+                        <td id="codeSocieteDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Banque</td>
+                        <td id="codeBanqueDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Compte</td>
+                        <td id="codeCompteDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Journal</td>
+                        <td id="codeJournalDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Code Etablissement</td>
+                        <td id="codeEtablissementDE"></td>
+                      </tr>
+                      <tr>
+                        <td>Identifiant Compte</td>
+                        <td id="idCompte"></td>
+                      </tr>
+                      <tr>
+                        <td>Nature du flux</td>
+                        <td id="natureFlux"></td>
+                      </tr>
+                      <tr>
+                        <td>Date de génération</td>
+                        <td id="dateGeneration"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section> 
+            <!--FIN POPUP DETAILS ECRITURE-->
+
+
+            <!--POPUP MODIFIER LIGNE -->
+			<section id="popUpEdit" class="invisible">
+				<form class="editionContainer">
+				<h3 id="modifTitre"></h3>
+				<div class="firstRow">
+					<label for="inputLibelle">Libellé de la ligne</label>
+					<input type="text" name="libelle" id="inputLibelle" class="inputModifiable" />
+					<label for="D">D</label>
+					<input type="radio" id="D" name="sensEcriture" value="D" />
+					<label for="C">C</label>
+					<input type="radio" id="C" name="sensEcriture" value="C" />
+				</div>
+					
+				<div class="blocValeurs">
+					<h4>Valeurs</h4>
+					<div class="form-group1">
+						<div class="compte">
+							<label for="compteSelection">Compte</label>
+							<input type="text" id="compteSelection" list="compteOptions" class="inputModifiable listeRouge" />
+              <datalist id="compteOptions"></datalist>
+						</div>
+						<div class="montantEdit">
+							<label for="montantEdit">Montant</label>
+							<input type="text" id="montantEdit" class="inputModifiable" />
+						</div>
+				</div>
+						
+				<div class="form-group2">
+						<div class="libEdit">
+							<label for="libEdit">Libellé</label>
+							<input type="text" id="libEdit" class="inputModifiable" />
+						</div>
+						<div class="codeJournal">
+							<label for="codeJournal">Code Journal</label>
+              <input type="text" id="codeJournalEdit" list="journalOptions" class="inputModifiable listeRouge" />
+              <datalist id="journalOptions"></datalist>
+						</div>
+					</div>
+
+					<div class="form-group3">
+						<div class="libExfiles">
+							<label for="libExfiles">Libellé eXfiles</label>
+							<input type="text" id="libExfiles" class="inputModifiable" />
+						</div>
+						<div class="refEdit">
+							<label for="refEdit">Référence</label>
+							<input type="text" id="refEdit" class="inputModifiable" />
+						</div>
+					</div>
+				</div>
+				
+				<div class="blocZA">
+					<h4>Zonnes annexes</h4>
+					<div class="form-group4">
+            <div class="za1">
+							<label for="za1">Zone Annexe 1</label>
+							<input type="text" id="za1" class="inputModifiable" />
+						</div>
+            <div class="za2">
+							<label for="za2">Zone Annexe 2</label>
+							<input type="text" id="za2" class="inputModifiable" />
+						</div>
+						<div class="za3">
+							<label for="za3">Zone Annexe 3</label>
+							<input type="text" id="za3" class="inputModifiable" />
+						</div>
+					</div>
+
+					<div class="form-group5">
+						<div class="za4">
+							<label for="za4">Zone Annexe 4</label>
+							<input type="text" id="za4" class="inputModifiable" />
+						</div>
+            <div class="za5">
+							<label for="za5">Zone Annexe 5</label>
+							<input type="text" id="za5" class="inputModifiable" />
+						</div>
+						<div class="za6">
+							<label for="za6">Zone Annexe 6</label>
+							<input type="text" id="za6" class="inputModifiable" />
+						</div>
+					</div>
+
+					<div class="form-group6">
+						<div class="za7">
+							<label for="za7">Zone Annexe 7</label>
+							<input type="text" id="za7" class="inputModifiable" />
+						</div>
+            <div class="za8">
+							<label for="za8">Zone Annexe 8</label>
+							<input type="text" id="za8" class="inputModifiable" />
+						</div>
+						<div class="za9">
+							<label for="za9">Zone Annexe 9</label>
+							<input type="text" id="za9" class="inputModifiable" />
+						</div>
+					</div>
+
+					<div class="form-group7">
+						<div class="za10 align-left">
+							<label for="za10">Zone Annexe 10</label>
+							<input type="text" id="za10" class="inputModifiable" />
+						</div>
+					</div>
+
+				</div>
+				<div id="boutonsConfirmation">
+					<button id="validerModification">Valider</button>
+					<button id="annulerModification">Annuler</button>
+				</div>
+				</form>
+			</section>
+
+
+
+        </section>
+        </section>
+        <!--Fin Section Container-->
+
+        <!--FORMULAIRE AJOUT D'une Ligne-->
+        <section class="container-formulaire-jc invisible">
+          <div class="main-form-div">
+            <div class="form-j-c">
+              
+              <!--1e Block-->
+              <form class="libelle">
+                <h4>Libellé de la ligne</h4>
+                <label for="libelle"></label>
+                <input type="text" name="libelle" id="libelle" />
+                <div class="check-div">
+                  <div>
+                    <label for="D">D</label>
+                    <input type="radio" class="radio" name="debit_credit" id="D" value="D"/>
+                  </div>
+                  <div>
+                    <label for="C">C</label>
+                    <input type="radio" class="radio" name="debit_credit" id="C" value="C" />
+                  </div>
+                </div>
+              </form>
+              <!--Fin 1er Block-->
+    
+              <!--2e Block-->
+              <h4 class="valeurs">Valeurs</h4>
+              <!--Fin 2e block-->
+    
+              <!--3e BLOCK-->
+              <form class="form-valeurs">
+                <div>
+                  <label for="compte-select">Compte</label>
+    
+                  <select name="compte-select" id="compte-select">
+                    <option value="61610002">61610002 - Assurance Brive</option>
+                    <option value="61610003">61610003 - Assurance Brive</option>
+                    <option value="61610004">61610004 - Assurance Brive</option>
+                    <option value="61610005">61610005 - Assurance Brive</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="montant">Montant</label>
+                  <input type="text" name="montant" id="montant" />
+                </div>
+                <div>
+                  <label for="libelle">Libellé</label>
+                  <input type="text" name="libelle" id="libelleForm" />
+                </div>
+                <div>
+                  <label for="code-journal">Code Journal</label>
+                  <select name="code-journal" id="code-journal">
+                    <option value="test1">test1</option>
+                    <option value="test2">test2</option>
+                    <option value="test3">test3</option>
+                    <option value="test4">test4</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="libelle-exfiles">Libellé eXfiles</label>
+                  <input type="text" name="libelle-exfiles" id="libelle-exfiles" />
+                </div>
+                <div>
+                  <label for="reference">Référence</label>
+                  <input type="text" name="reference" id="reference" />
+                </div>
+              </form>
+              <!--FIN 3e BLOCK-->
+    
+              <!--4e Block-->
+              <h4 class="zones">Zones Annexes</h4>
+              <!--Fin 4e Block-->
+
+              <!--5e Block-->
+              <form class="form-zones">
+                <div class="block-divers">
+                  <div>
+                    <label for="section-budgetaire">Section Budgétaire</label>
+                    <input type="text" name="section-budgetaire" id="section-budgetaire"/>
+                  </div>
+                  <div>
+                    <label for="collectif-comptable">Collectif Comptable</label>
+                    <input type="text" name="collectif-comptable" id="collectif-comptable"/>
+                  </div>
+                  <div>
+                    <label for="ref-tiers">Ref tiers</label>
+                    <input type="text" name="ref-tiers" id="ref-tiers"/>
+                  </div>
+                </div>
+                <div class="block-zones-annexe">
+                  <div>
+                    <label for="zone-annexe-4">Zone Annexe 4</label>
+                    <input type="text" name="zone-annexe-4" id="zone-annexe-4"/>
+                  </div>
+                  <div>
+                    <label for="zone-annexe-5">Zone Annexe 5</label>
+                    <input type="text" name="zone-annexe-5" id="zone-annexe-5"/>
+                  </div>
+                  <div>
+                    <label for="zone-annexe-6">Zone Annexe 6</label>
+                    <input type="text" name="zone-annexe-6" id="zone-annexe-6"/>
+                  </div>
+                  <div>
+                    <label for="zone-annexe-7">Zone Annexe 7</label>
+                    <input type="text" name="zone-annexe-7" id="zone-annexe-7"/>
+                  </div>
+                  <div>
+                    <label for="zone-annexe-8">Zone Annexe 8</label>
+                    <input type="text" name="zone-annexe-8" id="zone-annexe-8" />
+                  </div>
+                  <div>
+                    <label for="zone-annexe-9">Zone Annexe 9</label>
+                    <input type="text" name="zone-annexe-9" id="zone-annexe-9" />
+                  </div>
+                  <div>
+                    <label for="zone-annexe-10">Zone Annexe 10</label>
+                    <input type="text" name="zone-annexe-10" id="zone-annexe-10" />
+                  </div>
+                </div>
+              </form>
+              <!--Fin 5e Block-->
+
+              <!-- DEBUT DEUX BUTTONS  -->
+              <section class="btns-popup-zones ">
+                <a class="link link-valid-annul" href="#"
+                  >VALIDER</a>
+                <a class="btnAnnul"  href="#"
+                  >ANNULER</a>
+              </section>
+              <!-- FIN DEUX BUTTONS -->
+            </div>
+           
+          </div>
+          <!--Fin Main div formulaire-->
+        </section>
+    </main>
+
+    <!-- DEBUT BLOCK FOOTER -->
+
+        <footer>
+			<ul class="footer-menu">
+				<li><a href="#">Accueil</a></li>
+				<li><a href="#">A Propos</a></li>
+				<li><a href="#">Nos solutions</a></li>
+				<li><a href="#">Mentions légales</a></li>
+				<li><a href="#">Partenaires</a></li>
+				<li><a href="#">Recrutement</a></li>
+				<li><a href="#"><i class="fa-brands fa-linkedin logo-linkedin"></i></a></li>
+			</ul>
+        </footer>
+
+		
+      <script src="https://kit.fontawesome.com/f924bf4e1d.js" 
+      crossorigin="anonymous"></script>
+
+      <!-- Import des CDN pour utiliser les modules Exceljs et FileSaver côté navigateur -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js" integrity="sha512-UnrKxsCMN9hFk7M56t4I4ckB4N/2HHi0w/7+B/1JsXIX3DmyBcsGpT3/BsuZMZf+6mAr0vP81syWtfynHJ69JA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      
+	  <script src="../PARAM-ENV/modal.js"></script>
+      <script src="../js/journal-comptable-1.js"></script>
+      <script src="../PARAM-ENV/displayFile.js"></script>
+      <script src="../js/header.js"></script>
+	<script src="../js/journalComptable.js"></script>
+    </body>
+</html>

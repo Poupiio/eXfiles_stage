@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualisation journal - Home</title>
+    <!-- Heritage config CSS admin-->
+    <link rel="stylesheet" href="../css/import-export/main-import-export.css" media="screen" />
+    <link rel="stylesheet" href="../css/import-export/import-export-comun.css" media="screen" />
+    <link rel="stylesheet" href="../css/journal-comptable/journal-comptable.css" media="screen" />
+    <link rel="stylesheet" href="../css/dossier-popup.css">
+
+  </head>
+
+<body>
+
+	<header>
+		<div class="logo-container">
+			<img class="logo"src="../images/logo.png" alt="Logo eXfiles">
+		</div>
+		<nav>
+			<ul class="main-menu">
+				<li><a href="../tableau-de-bord.html">Tableau de bord</a></li>
+				<li class="menu-deroulant">
+					<a href="#">Dossier</a>
+					<ul class="fileMenu">
+						<li><a id="myBtn" href="#">Gérer les dossiers</a></li>
+					</ul>
+				</li>
+				<li class="menu-deroulant">
+					<a href="#">Paramétrage</a>
+					<ul id="accessParam"></ul>
+				</li>
+				<li class="menu-deroulant">
+					<a href="#">Exploitation</a>
+					<ul id="accessExp"></ul>
+				</li>
+			</ul>
+		</nav>
+		<ul class="user-menu">
+			<li><a href="../user.html"><i class="fa-regular fa-user user-icon"></i></a></li>
+			<li><a href="../deconnexion.html">Déconnexion</a></li>
+		</ul>
+	</header>
+  
+	<!-- DEBUT FENETRE POP-UP GERER LES DOSSIERS -->
+	<div id="myModal" class="modal">
+
+	<div class="modal-content">
+		<h3>GÉRER LES DOSSIERS</h3>
+		<p for="" class="l1">Créer un dossier</p>
+		<p class="nd"> Nom du dossier
+		<input placeholder="nom-du-dossier" class="snd">
+		</p>
+		
+		<p for="" class="l2">Renommer/Supprimer un dossier</p>
+
+		<ul class="fonc"></ul>
+
+<!-- DEBUT DEUX BUTTONS  POP-UP -->
+		<a class="link" href="#">VALIDER</a>
+		<a class="btn2" href="#">ANNULER</a>
+<!-- FIN DEUX BUTTONS  POP-UP -->
+	</div>
+	</div>
+
+<!-- FIN FENETRE POP-UP GERER LES DOSSIERS -->
+
+          <!-- DEBUT DEBUT SOUS-BARRE -->
+  <main class="main-export ">
+        
+    <div class="bar">
+      <img src="../images/folder.png" alt="">
+      <p class="pageTitle">EXPLOITATION</p>
+    </div>
+    <div class="bar1">
+      <ul id="subMenu"></ul>
+    </div>
+      <!-- FIN DEBUT SOUS-BARRE -->
+
+      
+    <section class="container container-home">
+      <!--BLOCK LEFT TRAITEMENT-->
+      <div id ="codeTraitement" class="table-left traitement">
+        <div class="table-left-head">
+          TRAITEMENT
+        </div>
+      </div>
+      <!--FIN BLOCK TRAITEMENT-->
+
+      <!--BLOCK CENTRAL-->
+      <section class="div-main main-journal-comptable-home">
+
+        <!--HEAD-->
+        <div class="div-head import-source"><img src="../images/avs.png" alt="" class="avs-img"><p>VISUALISATION DU JOURNAL COMPTABLE</p></div>
+        <!--FIN HEAD-->
+
+        <!--Début Contenu Central-->
+        <div class="div-body journal-comptable-home">
+
+          <h4>LOTS DISPONIBLES</h4>
+          <!-- Liste déroulante des lots -->
+          <div class="lotContainer">
+            <ul id="lot-select"></ul>
+          </div>
+        </div>
+        <!--FIN Contenu Central-->
+      </section>
+      <!--FIN Block Central-->
+      
+     
+    </section>  
+    <!--Fin Section Container-->
+   
+  </main>
+
+
+  <footer>
+    <ul class="footer-menu">
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">A Propos</a></li>
+      <li><a href="#">Nos solutions</a></li>
+      <li><a href="#">Mentions légales</a></li>
+      <li><a href="#">Partenaires</a></li>
+      <li><a href="#">Recrutement</a></li>
+      <li><a href="#"><i class="fa-brands fa-linkedin logo-linkedin"></i></a></li>
+    </ul>
+      </footer>
+
+    <script src="https://kit.fontawesome.com/f924bf4e1d.js" 
+      crossorigin="anonymous"></script>
+
+    <script src="../PARAM-ENV/modal.js"></script>
+    <script src="../js/visualisation-journal-home.js"></script>
+    <script src="../PARAM-ENV/displayFile.js"></script>
+    <script src="../js/header.js"></script>
+  
+</body>
+
+
+</html>
